@@ -7,6 +7,7 @@
 [![Logistic Regression](https://img.shields.io/badge/Model-Logistic_Regression-blue?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 [![KNN](https://img.shields.io/badge/Model-KNN-9cf?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
 [![Dataset](https://img.shields.io/badge/Data-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction)
+[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](dashboard/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 ---
@@ -181,6 +182,29 @@ Le modèle final (KNN) permet :
 
 ---
 
+## Dashboard interactif
+
+Au-delà du notebook, ce projet inclut un **dashboard Streamlit** pensé comme un véritable outil d'aide à la décision pour des non-techniciens — décideurs métier, équipes relation-client.
+
+| Page | Ce qu'elle apporte |
+|---|---|
+| **Vue d'ensemble** | KPIs en temps réel, répartition de la satisfaction, les 3 constats clés de l'EDA |
+| **Facteurs de Satisfaction** | Écarts de perception par service, classement des corrélations, croisement Classe × Type de voyage — recalculés en direct selon les filtres |
+| **Performance des Modèles** | Comparaison LR vs KNN, courbes ROC, **simulateur de seuil de décision interactif** (arbitrage précision/recall en temps réel) |
+| **Simulateur de Risque** | Score de risque d'insatisfaction pour un passager donné, avec décomposition des facteurs contributifs (interprétabilité locale) |
+| **Recommandations** | Synthèse exécutive : objectifs, priorités d'investissement, profils à risque, limites |
+
+Tous les filtres (type de voyage, classe, fidélité, âge, modèle de scoring) s'appliquent en temps réel sur l'ensemble des pages — les KPIs et graphiques sont recalculés à la volée, pas de valeurs figées.
+
+**Lancer en local :**
+```bash
+cd dashboard && pip install -r requirements.txt && streamlit run app.py
+```
+
+Voir [`dashboard/README.md`](dashboard/README.md) pour le détail des pages et les instructions de déploiement gratuit sur Streamlit Community Cloud.
+
+---
+
 ## Livrables
 
 Ce projet va au-delà du notebook : il inclut l'ensemble des livrables attendus d'une mission de consulting Data réelle.
@@ -191,12 +215,13 @@ Ce projet va au-delà du notebook : il inclut l'ensemble des livrables attendus 
 | [`notebook_en.ipynb`](notebook_en.ipynb) | Version intégralement traduite en anglais (markdown + code + visuels) |
 | [`docs/rapport_satisfaction_client.docx`](docs/rapport_satisfaction_client.docx) | Rapport écrit de synthèse (10 pages), justifiant les choix analytiques |
 | [`docs/presentation_satisfaction_client.pptx`](docs/presentation_satisfaction_client.pptx) | Support de présentation orale (14 slides) |
+| [`dashboard/`](dashboard/) | Application Streamlit interactive — outil d'aide à la décision pour non-techniciens |
 
 ---
 
 ## Stack technique
 
-`Python` · `Pandas` · `NumPy` · `Scikit-learn` · `Logistic Regression` · `KNN` · `SciPy` (tests statistiques) · `Matplotlib` · `Seaborn` · `Jupyter Notebook`
+`Python` · `Pandas` · `NumPy` · `Scikit-learn` · `Logistic Regression` · `KNN` · `SciPy` (tests statistiques) · `Matplotlib` · `Seaborn` · `Jupyter Notebook` · `Streamlit` · `Plotly` (dashboard)
 
 ---
 
@@ -214,8 +239,15 @@ airline-satisfaction-ml
 ├── docs/
 │   ├── rapport_satisfaction_client.docx
 │   └── presentation_satisfaction_client.pptx
-└── img/
-    └── *.png                   ← Visuels clés du projet (EDA + ML)
+├── img/
+│   └── *.png                   ← Visuels clés du projet (EDA + ML)
+└── dashboard/                  ← Application Streamlit (voir dashboard/README.md)
+    ├── app.py
+    ├── pages/
+    ├── utils/
+    ├── models/
+    ├── data/
+    └── scripts/
 ```
 
 ---
