@@ -262,6 +262,7 @@ airline-satisfaction-ml
 - **Machine Learning** : classification supervisée, tuning par validation croisée, gestion du déséquilibre de classes, optimisation de seuil, test d'ablation.
 - **Feature Engineering** : construction de variables justifiées par l'analyse, validation systématique par corrélation avant intégration.
 - **Interprétabilité** : lecture de coefficients standardisés, distinction explicite entre performance pure et modèle interprétable pour le métier.
+- **Business Intelligence & déploiement** : dashboard Streamlit multi-pages (filtres temps réel, simulateur interactif), mis en production sur Streamlit Community Cloud, avec résolution de vrais incidents de déploiement (dépendances, versions Python).
 - **Communication Data** : rapport écrit, présentation orale, notebook bilingue, storytelling analytique orienté décision business.
 
 ## Ce que ce projet démontre
@@ -270,7 +271,8 @@ Au-delà du Machine Learning, ce projet démontre ma capacité à :
 - structurer un projet Data Science complet, de la donnée brute à la recommandation métier ;
 - justifier systématiquement mes choix méthodologiques plutôt que d'appliquer des règles par défaut ;
 - tester empiriquement mes hypothèses plutôt que de les affirmer par principe ;
-- produire des livrables complets et professionnels (notebook, rapport, présentation, version bilingue) ;
+- produire des livrables complets et professionnels (notebook, rapport, présentation, dashboard déployé, version bilingue) ;
+- diagnostiquer et résoudre des problèmes de mise en production réels, pas seulement du prototypage local ;
 - expliquer clairement des résultats techniques à un public métier non-data.
 
 ---
