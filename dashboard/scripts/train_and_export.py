@@ -4,7 +4,7 @@ Reproduces the notebook's pipeline (feature engineering + final LR/KNN models)
 and exports everything the Streamlit dashboard needs:
   - dashboard/models/lr_pipeline.joblib
   - dashboard/models/knn_pipeline.joblib
-  - dashboard/data/passengers_scored.parquet
+  - dashboard/data/passengers_scored.csv.gz
   - dashboard/data/service_cols.json (list of the 14 service rating columns)
 
 Run once from the dashboard/scripts/ folder (train.csv/test.csv must be here):
@@ -119,8 +119,8 @@ def main():
         "satisfaction", "lr_proba", "knn_proba", "lr_pred", "knn_pred",
     ] + SERVICE_COLS
     scored = scored[keep_cols]
-    scored.to_parquet(DATA_DIR / "passengers_scored.parquet", index=False)
-    print(f"Scored dataset exported: {scored.shape} -> {DATA_DIR / 'passengers_scored.parquet'}")
+    scored.to_csv(DATA_DIR / "passengers_scored.csv.gz", index=False, compression="gzip")
+    print(f"Scored dataset exported: {scored.shape} -> {DATA_DIR / 'passengers_scored.csv.gz'}")
 
     with open(DATA_DIR / "service_cols.json", "w") as f:
         json.dump(SERVICE_COLS, f)

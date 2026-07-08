@@ -4,4 +4,3 @@ numpy==2.3.5
 scikit-learn==1.7.2
 plotly==6.3.0
 joblib==1.5.2
-pyarrow==21.0.0

@@ -14,7 +14,7 @@ MODELS_DIR = ROOT / "models"
 
 @st.cache_data(show_spinner="Chargement des données passagers...")
 def load_scored_data() -> pd.DataFrame:
-    df = pd.read_parquet(DATA_DIR / "passengers_scored.parquet")
+    df = pd.read_csv(DATA_DIR / "passengers_scored.csv.gz", compression="gzip")
     df["age_group"] = pd.Categorical(
         df["age_group"], categories=["minor", "young_adult", "adult", "mid_career", "senior"], ordered=True
     )
