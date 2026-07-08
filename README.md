@@ -106,6 +106,42 @@ Optimisation du seuil de décision, lecture des coefficients de la régression l
 
 ---
 
+## Dashboard interactif
+
+**🔴 En ligne : [satisfaction-client-airline.streamlit.app](https://satisfaction-client-airline.streamlit.app/)**
+
+Au-delà du notebook, ce projet inclut un **dashboard Streamlit** pensé comme un véritable outil d'aide à la décision pour des non-techniciens — décideurs métier, équipes relation-client. Déployé gratuitement sur Streamlit Community Cloud, directement connecté à ce dépôt : les deux modèles ci-dessus y sont utilisés en production, pas seulement dans le notebook.
+
+| Page | Ce qu'elle apporte |
+|---|---|
+| **Vue d'ensemble** | KPIs en temps réel, répartition de la satisfaction, les 3 constats clés de l'EDA |
+| **Facteurs de Satisfaction** | Écarts de perception par service, classement des corrélations, croisement Classe × Type de voyage — recalculés en direct selon les filtres |
+| **Performance des Modèles** | Comparaison LR vs KNN, courbes ROC, **simulateur de seuil de décision interactif** (arbitrage précision/recall en temps réel) |
+| **Simulateur de Risque** | Score de risque d'insatisfaction pour un passager donné, avec décomposition des facteurs contributifs (interprétabilité locale) |
+| **Recommandations** | Synthèse exécutive : objectifs, priorités d'investissement, profils à risque, limites |
+
+Tous les filtres (type de voyage, classe, fidélité, âge, modèle de scoring) s'appliquent en temps réel sur l'ensemble des pages — les KPIs et graphiques sont recalculés à la volée, pas de valeurs figées.
+
+**Lancer en local :**
+```bash
+cd dashboard && pip install -r requirements.txt && streamlit run app.py
+```
+
+Voir [`dashboard/README.md`](dashboard/README.md) pour le détail des pages et les instructions de déploiement gratuit sur Streamlit Community Cloud.
+
+#### Aperçu du dashboard
+
+**Vue d'ensemble** — KPIs recalculés en direct et constats clés de l'EDA
+![Dashboard vue d'ensemble](img/13-bi-vue_ensemble.png)
+
+**Performance des Modèles** — comparaison LR vs KNN, courbes ROC, matrice de confusion
+![Dashboard performance des modèles](img/14-bi-performance_modeles.png)
+
+**Simulateur de Risque** — score de risque en temps réel pour un profil passager, avec recommandation
+![Dashboard simulateur de risque](img/15-bi-simulateur_risque.png)
+
+---
+
 ## Visuels clés du projet
 
 ### 1. Distribution de la variable cible
@@ -181,31 +217,6 @@ Le modèle final (KNN) permet :
 - Prioriser les investissements sur l'expérience digitale d'embarquement et le divertissement à bord, plutôt que sur la seule réduction des retards.
 - Utiliser le score de risque prédictif pour cibler en priorité les voyageurs personnels en classe Eco, jeunes ou seniors — les profils les plus à risque identifiés.
 - Ajuster le seuil de décision du modèle en production selon la capacité opérationnelle de l'équipe relation-client à traiter les alertes générées.
-
----
-
-## Dashboard interactif
-
-**🔴 En ligne : [satisfaction-client-airline.streamlit.app](https://satisfaction-client-airline.streamlit.app/)**
-
-Au-delà du notebook, ce projet inclut un **dashboard Streamlit** pensé comme un véritable outil d'aide à la décision pour des non-techniciens — décideurs métier, équipes relation-client. Déployé gratuitement sur Streamlit Community Cloud, directement connecté à ce dépôt.
-
-| Page | Ce qu'elle apporte |
-|---|---|
-| **Vue d'ensemble** | KPIs en temps réel, répartition de la satisfaction, les 3 constats clés de l'EDA |
-| **Facteurs de Satisfaction** | Écarts de perception par service, classement des corrélations, croisement Classe × Type de voyage — recalculés en direct selon les filtres |
-| **Performance des Modèles** | Comparaison LR vs KNN, courbes ROC, **simulateur de seuil de décision interactif** (arbitrage précision/recall en temps réel) |
-| **Simulateur de Risque** | Score de risque d'insatisfaction pour un passager donné, avec décomposition des facteurs contributifs (interprétabilité locale) |
-| **Recommandations** | Synthèse exécutive : objectifs, priorités d'investissement, profils à risque, limites |
-
-Tous les filtres (type de voyage, classe, fidélité, âge, modèle de scoring) s'appliquent en temps réel sur l'ensemble des pages — les KPIs et graphiques sont recalculés à la volée, pas de valeurs figées.
-
-**Lancer en local :**
-```bash
-cd dashboard && pip install -r requirements.txt && streamlit run app.py
-```
-
-Voir [`dashboard/README.md`](dashboard/README.md) pour le détail des pages et les instructions de déploiement gratuit sur Streamlit Community Cloud.
 
 ---
 
