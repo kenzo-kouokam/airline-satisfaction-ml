@@ -2,13 +2,15 @@
 
 > Mission de consultant Data/BI pour une compagnie aérienne — analyse exploratoire, facteurs explicatifs & classification binaire sur 129 880 passagers
 
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Dashboard-FF4B4B?logo=streamlit&logoColor=white)](https://satisfaction-client-airline.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.13-blue)](https://www.python.org/)
 [![Scikit--learn](https://img.shields.io/badge/Model-Scikit--learn-orange?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Logistic Regression](https://img.shields.io/badge/Model-Logistic_Regression-blue?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 [![KNN](https://img.shields.io/badge/Model-KNN-9cf?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
 [![Dataset](https://img.shields.io/badge/Data-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction)
-[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](dashboard/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+
+### 🔴 [Dashboard en ligne — satisfaction-client-airline.streamlit.app](https://satisfaction-client-airline.streamlit.app/)
 
 ---
 
@@ -184,7 +186,9 @@ Le modèle final (KNN) permet :
 
 ## Dashboard interactif
 
-Au-delà du notebook, ce projet inclut un **dashboard Streamlit** pensé comme un véritable outil d'aide à la décision pour des non-techniciens — décideurs métier, équipes relation-client.
+**🔴 En ligne : [satisfaction-client-airline.streamlit.app](https://satisfaction-client-airline.streamlit.app/)**
+
+Au-delà du notebook, ce projet inclut un **dashboard Streamlit** pensé comme un véritable outil d'aide à la décision pour des non-techniciens — décideurs métier, équipes relation-client. Déployé gratuitement sur Streamlit Community Cloud, directement connecté à ce dépôt.
 
 | Page | Ce qu'elle apporte |
 |---|---|
@@ -215,7 +219,7 @@ Ce projet va au-delà du notebook : il inclut l'ensemble des livrables attendus 
 | [`notebook_en.ipynb`](notebook_en.ipynb) | Version intégralement traduite en anglais (markdown + code + visuels) |
 | [`docs/rapport_satisfaction_client.docx`](docs/rapport_satisfaction_client.docx) | Rapport écrit de synthèse (10 pages), justifiant les choix analytiques |
 | [`docs/presentation_satisfaction_client.pptx`](docs/presentation_satisfaction_client.pptx) | Support de présentation orale (14 slides) |
-| [`dashboard/`](dashboard/) | Application Streamlit interactive — outil d'aide à la décision pour non-techniciens |
+| [`dashboard/`](dashboard/) | Application Streamlit interactive — outil d'aide à la décision pour non-techniciens · [démo en ligne](https://satisfaction-client-airline.streamlit.app/) |
 
 ---
 
