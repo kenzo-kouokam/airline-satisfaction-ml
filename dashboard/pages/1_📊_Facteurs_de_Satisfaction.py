@@ -91,8 +91,21 @@ with st.container(border=True):
     show_cols = ["satisfaction"] + service_cols
     summary = filtered[show_cols].groupby("satisfaction").mean().round(2).T
     summary.columns = ["Neutre / Insatisfait" if c == "neutral or dissatisfied" else "Satisfait" for c in summary.columns]
+    def row_gradient(row):
+        vmin, vmax = row.min(), row.max()
+        span = (vmax - vmin) or 1
+        styles = []
+        for v in row:
+            t = (v - vmin) / span
+            r = int(0xF3 + (0x1E - 0xF3) * t)
+            g = int(0xF6 + (0x27 - 0xF6) * t)
+            b = int(0xFC + (0x61 - 0xFC) * t)
+            text = "white" if t > 0.55 else NAVY
+            styles.append(f"background-color: rgb({r},{g},{b}); color: {text}")
+        return styles
+
     st.dataframe(
-        summary.style.background_gradient(cmap="Blues", axis=1).format("{:.2f}"),
+        summary.style.apply(row_gradient, axis=1).format("{:.2f}"),
         use_container_width=True,
     )
 
